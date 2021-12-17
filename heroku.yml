@@ -1,6 +1,13 @@
-build:
-  docker:
-    web: Dockerfile
-run:
-  web: bundle exec puma -C config/puma.rb
-  command: python manage.py runserver 0.0.0.0:8000
+version: "3.8"
+   
+services:
+  web:
+    build: .
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    
+    image: web:djangohelloworld
+    container_name: djangohelloworld_container
+    command: python manage.py runserver 0.0.0.0:8000
