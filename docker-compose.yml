@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.9.9"
    
 services:
   web:
@@ -10,5 +10,5 @@ services:
     
     image: web:djangohelloworld
     container_name: djangohelloworld_container
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py runserver
   
